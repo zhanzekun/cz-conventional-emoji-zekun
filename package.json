@@ -1,5 +1,5 @@
 {
-  "name": "cz-conventional-emoji",
+  "name": "cz-conventional-emoji-zekun",
   "version": "1.0.2",
   "description": "A commitizen adapter following the conventional-changelog format with emoji.",
   "main": "index.js",
@@ -7,18 +7,19 @@
     "commit": "git-cz",
     "test": "mocha *.test.js",
     "format": "prettier --write *.js",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "publish:npm": "npm publish --registry https://registry.npmjs.org/"
   },
-  "homepage": "https://github.com/gaoac/cz-conventional-emoji",
+  "homepage": "https://github.com/zhanzekun/cz-conventional-emoji-zekun",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaoac/cz-conventional-emoji.git"
+    "url": "https://github.com/zhanzekun/cz-conventional-emoji-zekun.git"
   },
   "engineStrict": true,
   "engines": {
     "node": ">= 10"
   },
-  "author": "gaoancun <gaoac.snow@outlook.com>",
+  "author": "zekunzhan<zhanzekun@foxmail.com>",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
@@ -42,5 +43,8 @@
     "commitizen": {
       "path": "./index.js"
     }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

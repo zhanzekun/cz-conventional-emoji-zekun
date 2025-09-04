@@ -52,7 +52,42 @@ yarn add cz-conventional-emoji
 
 ## 使用
 
-当需要提交时，只需使用“git cz”代替“git commit”即可。查看[Commitizen](https://github.com/commitizen/cz-cli)官方文档了解更多信息。
+当需要提交时，只需使用"git cz"代替"git commit"即可。查看[Commitizen](https://github.com/commitizen/cz-cli)官方文档了解更多信息。
+
+## 发布
+
+如果您需要发布此包到npm官方源，而您的默认npm源是公司私有源，可以使用以下方法：
+
+### 方法一：使用 --registry 参数（推荐）
+```bash
+npm publish --registry https://registry.npmjs.org/
+```
+
+### 方法二：使用环境变量
+```bash
+NPM_CONFIG_REGISTRY=https://registry.npmjs.org/ npm publish
+```
+
+### 方法三：使用项目配置
+此项目已在 `package.json` 中配置了 `publishConfig`，直接运行：
+```bash
+npm publish
+```
+
+### 方法四：使用自定义脚本
+```bash
+npm run publish:npm
+```
+
+### 验证发布
+发布前可以运行以下命令验证：
+```bash
+# 检查当前registry
+npm config get registry
+
+# 预览发布内容
+npm publish --dry-run
+```
 
 ## 作者
 

@@ -54,6 +54,41 @@ yarn add cz-conventional-emoji
 
 Simply use `git cz` instead of `git commit` when committing. See the doc of [Commitizen](https://github.com/commitizen/cz-cli) for more info.
 
+## Publishing
+
+If you need to publish this package to npm official registry while your default npm registry is a private company registry, you can use the following methods:
+
+### Method 1: Use --registry parameter (Recommended)
+```bash
+npm publish --registry https://registry.npmjs.org/
+```
+
+### Method 2: Use environment variable
+```bash
+NPM_CONFIG_REGISTRY=https://registry.npmjs.org/ npm publish
+```
+
+### Method 3: Use project configuration
+This project has already configured `publishConfig` in `package.json`, simply run:
+```bash
+npm publish
+```
+
+### Method 4: Use custom script
+```bash
+npm run publish:npm
+```
+
+### Verify publishing
+You can verify before publishing with these commands:
+```bash
+# Check current registry
+npm config get registry
+
+# Preview publish content
+npm publish --dry-run
+```
+
 ## Author
 
 gaoancun <gaoac.snow@outlook.com>
